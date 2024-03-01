@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="IIS Web Application Name" description="" value="TempRel20240204114958" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^E:\\Temp\\Quiz\ App\ with\ React\ and\ Net\ Core\ Api\\TempRel\\TempRel\\obj\\Release\\net8\.0\\PubTmp\\Out\\$" />
-  </parameter>
-</parameters>

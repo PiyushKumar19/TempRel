@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "verdant-ops",
+  "private_key_id": "7c6558cc5985b7f97abf0842ed215fcf247016be",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDTFbKD1EZsw4xv\nnIh93CqGvz0WKTMW1HWEm0AJGBOxLp4mZUhk3r1ObaMgLV+/XqBWvOaHTN0ZE5+4\nICfzsnoG6A31qCpTwK+gKFh/u8fYKEanzIvTFe2MfaUu3HHMruNedx7SUox+YhpI\n0ccJ7UmzS5JS12jqDRmj718d7rlcUYQnJiY71AFMB6GnbgBtSXHX20aH/yultKps\nj+qkuDGDhOse8by5DSGpPBQ37JZ0aPrZE1o4d0RmXfrLn5AEPLX51Fn/kDNulSJG\nVuNCAkh8haxEtWqAotcgWqDvDUWsnCDEoAoXiOfZkREizfKlhVFnFbNZowV3oEg+\n17hT8HD3AgMBAAECggEAMZQaDs6wD+HKPXjVskIhFu8aCPd6UXVreM8CNmCaV3Zs\nnPYTD+YlLqOfufIOWCOAo37Q4pySHc63KAcdeybDdJXSmY17C5rpZUO0raPMZ5/m\nIIlxmg2/cs0cHCqY7Atzyf9OlPXgm9qs88eZ6WH7eopYfu6rbLXQ/Ok/PQeSL/Vk\nTZp4IE3MyM9UWbBVV7FjUCEhsih7URbgmx93CkfxqTSf1Nx7xZIY8mLodxI00Eu3\nWAok6Js1K9XW1j7/gTQHoBKxJs/n31KYptvYyZ2W6BNtgJ2l+4S6ak8d03CgS8/F\nzYGprGQfYN++Hx3Kp5ZBiu4g+tom7XdSgJYMd8tOuQKBgQDs7lOlUOXt9WwGsNx0\n2SVyhXohDvDU0dAsaa3TzEd9RCQpno1SMOwTorcF2JVRyfFcrl7n0xKNhkphEex2\n1W5EM65HaYCDM0753slqSv1YxmNvqcMIrK/THyj1KnNDbDRkSbpOT983qaF+/xVC\nPC64kxekOqYIkCbW+D7jQIrlIwKBgQDkEtdMPBLUFKoOEMi+JyVcacWVYKwPH0tC\nhbvzqJwlIsjdarNE/q02MqCdtv3Ls2Oma3loa/GujyI1OSUskjefDu/ioXxcNU/4\ncy+dB5xV8ogf91ABHcMeoVMQSvBT5vaAq6sOfBQhS1dyoFJlYg4vCR35ryBZVCMD\nFKlpl7dUHQKBgQC6FTR80lzD181QM/fxjdprZ4nUDPf5LhBh0V5EylwbdjkwtuYn\nd2TyxwkX/lLIOeLm98xyJsSbgq1IL9uYOWixCCYI0EOux81vUhq+8Mapwqa2PI6B\ncZ9mIUL5yq1cds9vNLiuaOzXutKr+4umyb2oGV6oDaf5cb4PeElsEnUEIQKBgQDL\nHxiN9aaTKQA23K3b5EM65Zypp9o08Zr2WOKGY7EExdD8mS2lkeezsC0pqTKpO0/R\nhEAxRomM/D7sBcPcyTAuQYBVZ5q5CGX7kKJkCMYsKX8gcQLYq6f93JF8njEhmD4L\nZFhI4yqOaGouVShs0IJvU4BVwalexTcVZE5pE0yb5QKBgQCmWtHMhyn8aE9GNhfm\n1b7Omr0kNrOpzncG54k4jaxJQL3bdg1VPGgm81p6SoId1OV+YAdJHfF+r+3dE37N\nQ3WiYY+6txi7Tt0QoJg8VuPmDUqbgYq/TgLIysDqoQzX6WT7VbNTrpPUAZVf7xM+\n95yZsoEjaM+vD/aMNpD4Car2Qg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "behrain-app@verdant-ops.iam.gserviceaccount.com",
+  "client_id": "118004700068372408459",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/behrain-app%40verdant-ops.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

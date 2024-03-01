@@ -1,4 +1,6 @@
+using Google.Api;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 using TempRel.Filters;
 using TempRel.Filters;
 using TempRel.Models;
@@ -16,12 +18,16 @@ builder.Services.AddDbContext<AppDbContext>(option =>
 builder.Services.AddScoped(typeof(ModifyApiResponseFilter<>));
 builder.Services.AddScoped(typeof(ModidyResponseFilter<>));
 builder.Services.AddScoped<ITranslationService, TranslationService>();
+builder.Services.AddScoped<IGoogleMapsService, GoogleMapsService>();
+builder.Services.AddScoped<GoogleApi.GooglePlaces>();
+
 
 builder.Services.AddAWSLambdaHosting(LambdaEventSource.HttpApi);
 
 builder.Services.AddCors();
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
+;
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

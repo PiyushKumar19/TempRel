@@ -13,13 +13,17 @@ namespace TempRel.Controllers
     {
         private readonly AppDbContext dbContext;
         private readonly ITranslationService translationService;
+        private readonly IGoogleMapsService mapsService;
         public static List<TestModel> testModels = new List<TestModel>();
         public static List<TestModel2> testModels2 = new List<TestModel2>();
 
-        public ModelsController(AppDbContext _dbContext, ITranslationService translationService)
+        public ModelsController(AppDbContext _dbContext,
+            ITranslationService translationService,
+            IGoogleMapsService mapsService)
         {
             dbContext = _dbContext;
             this.translationService = translationService;
+            this.mapsService = mapsService;
         }
         [HttpPost]
         public IActionResult CreateModel1(Model1 model)
@@ -103,6 +107,50 @@ namespace TempRel.Controllers
         {
             Console.WriteLine(model);
             return Ok(model);
+        }
+
+        [HttpPost("CreateTest")]
+        public async Task<IActionResult> PostModel(TestModel model)
+        {
+            await dbContext.Test.AddAsync(model);
+            await dbContext.SaveChangesAsync();
+            return Ok(model);
+        }
+
+        [HttpPut("Update Test Model")]
+        public async Task<IActionResult> UpdateModel(TestModel model)
+        {
+            dbContext.Test.Update(model);
+            await dbContext.SaveChangesAsync();
+            return Ok(model);
+        }
+
+        [HttpGet("Get Coordinates")]
+        public async Task<IActionResult> GetLocation(string address)
+        {
+            var coordinates = await mapsService.GetCoordinates(address);
+            return Ok(coordinates);
+        }
+
+        [HttpGet("Get place from Query")]
+        public async Task<IActionResult> GetPlace(string queryString)
+        {
+            var place = await mapsService.SearchTextString(queryString);
+            return Ok(place);
+        }
+
+        [HttpGet("AutoComplete the text search")]
+        public async Task<IActionResult> AutoCompleteSearch(string incompleteString)
+        {
+            var completeString = await mapsService.PlaceTextAutoComplete(incompleteString);
+            return Ok(completeString);
+        }
+
+        [HttpGet("AutoComplete the query search")]
+        public async Task<IActionResult> AutoCompleteQuerySearch(string incompleteQueryString)
+        {
+            var completeString = await mapsService.PlaceQueryAutoComplete(incompleteQueryString);
+            return Ok(completeString);
         }
     }
 }

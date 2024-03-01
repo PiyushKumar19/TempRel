@@ -10,5 +10,6 @@ namespace TempRel.Models
         public DbSet<Model1> Model1s { get; set; }
         public DbSet<Model2> Model2s { get; set; }
         public DbSet<TempModel> TempModel { get; set; }
+        public DbSet<TestModel> Test { get; set; }
     }
 }

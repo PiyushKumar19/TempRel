@@ -1,4 +1,5 @@
-bin
-.vs
-./obj
-./bin
+
+**/bin/
+**/obj/
+**/.vs/
+
