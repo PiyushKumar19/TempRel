@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 using TempRel.Filters;
+using TempRel.Middlewares;
 using TempRel.Models;
 
 namespace TempRel.Controllers
@@ -17,6 +19,9 @@ namespace TempRel.Controllers
         public static List<TestModel> testModels = new List<TestModel>();
         public static List<TestModel2> testModels2 = new List<TestModel2>();
 
+        private readonly Debouncer _debouncer;
+        public static int counter = 1;
+
         public ModelsController(AppDbContext _dbContext,
             ITranslationService translationService,
             IGoogleMapsService mapsService)
@@ -24,6 +29,8 @@ namespace TempRel.Controllers
             dbContext = _dbContext;
             this.translationService = translationService;
             this.mapsService = mapsService;
+
+            _debouncer = new Debouncer(TimeSpan.FromSeconds(1));
         }
         [HttpPost]
         public IActionResult CreateModel1(Model1 model)
@@ -151,6 +158,18 @@ namespace TempRel.Controllers
         {
             var completeString = await mapsService.PlaceQueryAutoComplete(incompleteQueryString);
             return Ok(completeString);
+        }
+
+        [HttpGet("Counter with Throttling")]
+        //[EnableRateLimiting("fixed")]
+        public async Task<IActionResult> Counter()
+        {
+            counter++;
+            _debouncer.Debounce(() =>
+            {
+                Console.WriteLine(StatusCode(429, "Too many Requests"));
+            });
+            return Ok(counter);
         }
     }
 }
